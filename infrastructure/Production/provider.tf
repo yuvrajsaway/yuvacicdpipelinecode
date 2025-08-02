@@ -5,6 +5,12 @@ terraform {
       version = "4.38.1"
     }
   }
+   backend "azurerm" {
+    resource_group_name   = "DoNotDeleteRg"
+    storage_account_name  = "121donotdeletestorage121"        # lowercase only
+    container_name        = "tfstate"
+    key                   = "yuvaterraform.tfstate"
+  }
 }
 
 provider "azurerm" {
